@@ -1,10 +1,4 @@
-/* =========================================================
-   Apple-inspired portfolio
-   Clean type, lots of space, alternating light and dark
-   sections, and soft scroll-based motion.
-   ========================================================= */
 
-/* ---------- Design tokens ---------- */
 :root {
   --light: #f5f5f7;
   --dark: #000000;

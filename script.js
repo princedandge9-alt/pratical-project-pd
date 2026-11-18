@@ -1,19 +1,19 @@
-// Run everything after the page has loaded
+
 document.addEventListener('DOMContentLoaded', () => {
 
-  // Tell the CSS that JavaScript is running (enables scroll animations)
+
   document.documentElement.classList.add('js');
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Useful elements (each one is optional)
+
   const navbar = document.getElementById('navbar');
   const progress = document.getElementById('progress');
   const hero = document.getElementById('home');
   const heroTitle = document.querySelector('.hero-title');
   const statement = document.querySelector('[data-scroll-text]');
 
-  // ---------- 1. Split the About statement into words ----------
+
   let words = [];
   if (statement) {
     const pieces = statement.textContent.trim().split(/\s+/);
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
     counters.forEach((el) => countObserver.observe(el));
   }
 
-  // ---------- 6. Scroll effects (progress bar, navbar, parallax, word highlight) ----------
+
   const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
   function onScroll() {
@@ -136,23 +136,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const viewH = window.innerHeight;
     const maxScroll = document.documentElement.scrollHeight - viewH;
 
-    // Progress bar at the top of the page
+
     if (progress) {
       progress.style.transform = `scaleX(${maxScroll > 0 ? y / maxScroll : 0})`;
     }
 
-    // Navbar gets a stronger background after scrolling a little
+
     if (navbar) {
       navbar.classList.toggle('scrolled', y > 10);
     }
 
-    // Hero title drifts up and fades as you scroll away (parallax)
+
     if (heroTitle && !reduceMotion && y < viewH) {
       heroTitle.style.transform = `translateY(${y * 0.25}px)`;
       heroTitle.style.opacity = String(clamp(1 - y / (viewH * 0.7), 0, 1));
     }
 
-    // About statement: each word lights up as the section moves up the screen
+
     if (statement && words.length && !reduceMotion) {
       const rect = statement.getBoundingClientRect();
       const p = clamp((viewH * 0.9 - rect.top) / (viewH * 0.6), 0, 1);
@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Run the scroll code at most once per frame (keeps it smooth)
+
   let ticking = false;
   window.addEventListener('scroll', () => {
     if (!ticking) {
@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', onScroll);
   onScroll();
 
-  // ---------- 7. Hero light follows the mouse (desktop only) ----------
+
   if (hero && !reduceMotion && window.matchMedia('(pointer: fine)').matches) {
     hero.addEventListener('pointermove', (event) => {
       const rect = hero.getBoundingClientRect();
@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ---------- 8. Contact form check (nothing is sent anywhere) ----------
+
   const form = document.getElementById('contact-form');
 
   if (form) {
@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ---------- 9. Footer year ----------
+
   const year = document.getElementById('year');
   if (year) {
     year.textContent = new Date().getFullYear();

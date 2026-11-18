@@ -1,14 +1,14 @@
-# GitHub Practical Test
+# GitHub Practical Test :-
 
-## Student Details
+## Student Details 🧑‍💻 :-
 
 - **Full Name:** Prince Dandge
-- **URN Number:** ADD-YOUR-URN-HERE
+- **URN Number:** E25B031504
 - **Semester:** 3rd
-- **Section:** ADD-YOUR-SECTION-HERE
+- **Section:** B
 - **Subject:** Git and GitHub
 
-## About This Project
+## About This Project 📁 :-
 
 A personal portfolio webpage with an Apple-inspired design, built with HTML, CSS and JavaScript.
 
@@ -16,7 +16,7 @@ A personal portfolio webpage with an Apple-inspired design, built with HTML, CSS
 - `style.css` - design, layout, and animations
 - `script.js` - scroll effects, count-up numbers, mobile menu, active menu link, and contact form check
 
-### Features
+### Features:-
 
 - Frosted-glass navigation bar that responds to scrolling
 - Scroll progress bar at the top of the page
@@ -28,12 +28,12 @@ A personal portfolio webpage with an Apple-inspired design, built with HTML, CSS
 - Mobile menu for small screens
 - Respects the "reduce motion" setting on your device
 
-## How to Run
+## How to Run:-
 
 1. Download or clone this repository.
 2. Open the `index.html` file in any web browser.
 
-## Git Branches
+## Git Branches:-
 
 - `feature-navbar` - added the navigation bar
 - `feature-footer` - added the footer
